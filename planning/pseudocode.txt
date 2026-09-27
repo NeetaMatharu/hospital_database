@@ -1,3 +1,5 @@
+# Hospital database planning
+
 START
 
 Create the hospital database
@@ -13,6 +15,8 @@ Identify primary keys
 Identify foreign keys
 
 Create entity relationsip diagram
+
+Create MySQL hospital database
 
 Create the hospitals table
 
@@ -34,4 +38,34 @@ Export final database
 
 END
  
+# Creating hospitals table
 
+START
+
+Connect to MySQL
+
+Create the hospital_database
+
+Select hospital_database
+
+Create the hospitals table with the following fields:
+
+hospital_id     INT    primary key    required
+name            VARCHAR(150)          required
+address         VARCHAR(255)          required
+size            INT (number of beds)  required
+type            VARCHAR(50)           required
+accreditation_status VARCHAR(30       required
+
+Check the hospitals table has been created
+
+Check the columns contents and datatypes
+
+Load the data from hospitals.csv into the hospitals table
+
+Check the data loaded as expected
+
+Check the hospital table has the expected number of 40 records.
+
+
+END
