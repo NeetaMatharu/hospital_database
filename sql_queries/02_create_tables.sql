@@ -24,6 +24,13 @@ DESCRIBE hospitals;
 
 -- Load data from hospitals.csv
 
-LOAD DATA LOCAL INFILE "/home/ubuntu/hospital_database/data_files/hospitals.csv" INTO TABLE hospitals FIELDS TERMINATED BY ',' IGNORE 1 LINES (hospital_id, name, address, size, type, accreditation_status);
+LOAD DATA LOCAL INFILE '/home/ubuntu/hospital_database/data_files/hospitals.csv' INTO TABLE hospitals FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' IGNORE 1 LINES (hospital_id, name, address, size, type, accreditation_status);
+
+-- Check the data
+
+SELECT * FROM hospitals;
+
+
+
 
 
