@@ -1,0 +1,37 @@
+START
+
+Create the hospital database
+
+Import CSV data files
+
+Inspect CSV data files
+
+Identify entity relationships
+
+Identify primary keys
+
+Identify foreign keys
+
+Create entity relationsip diagram
+
+Create the hospitals table
+
+Create the doctors and patients table
+
+Create the prescriptions table
+
+Load the data
+
+Check the correct data has been imported
+
+Check table relationships
+
+Create SQL queries
+
+Run and test  SQL queries
+
+Export final database
+
+END
+ 
+
