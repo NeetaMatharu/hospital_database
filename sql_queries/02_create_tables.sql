@@ -34,7 +34,7 @@ SELECT * FROM hospitals;
 
 CREATE TABLE doctors_patients
 (
-    person_id INT UNSIGNED NOT NULL AUTO INCREMENT,
+    person_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     name VARCHAR(150) NOT NULL,
     date_of_birth DATE NOT NULL,
     address VARCHAR(255) NOT NULL,
@@ -65,7 +65,7 @@ SELECT * FROM doctors_patients;
 
 LOAD DATA LOCAL INFILE '/home/ubuntu/hospital_database/data_files/patients.csv' INTO TABLE doctors_patients FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' IGNORE 1 LINES (person_id, name, date_of_birth, address, role, doctor_id);
 
--- CHeck the data
+-- Check the data
 
 SELECT * FROM doctors_patients;
 
