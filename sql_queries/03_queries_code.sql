@@ -6,7 +6,7 @@ SELECT hospitals.name, doctors_patients.person_id, doctors_patients.name
 FROM hospitals
 INNER JOIN doctors_patients
 ON hospitals.hospital_id = doctors_patients.hospital_id
-WHERE hospitals.id = 12;
+WHERE hospitals.hospital_id = 12;
 
 
 -- List a patient's prescriptions by date
