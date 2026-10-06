@@ -6,7 +6,7 @@ SELECT hospitals.name, doctors_patients.person_id, doctors_patients.name
 FROM hospitals
 INNER JOIN doctors_patients
 ON hospitals.hospital_id = doctors_patients.hospital_id
-WHERE hsopitals.id = 12;
+WHERE hospitals.id = 12;
 
 
 -- List a patient's prescriptions by date
@@ -14,9 +14,10 @@ WHERE hsopitals.id = 12;
 SELECT prescriptions.prescription_id, prescriptions.medication, prescriptions.prescription_date, doctors_patients.person_id, doctors_patients.name
 FROM prescriptions
 INNER JOIN doctors_patients
-ON prescriptions.patient_id = doctors_prescriptions.person_id
+ON prescriptions.patient_id = doctors_patients.person_id
 WHERE doctors_patients.person_id = 554
-ORDER BY prescriptions.prescription_date;
+ORDER BY prescriptions.prescription_date
+AND doctors_patients.role = 'Patient';
 
 -- List all prescriptions issued by a selected doctor
 

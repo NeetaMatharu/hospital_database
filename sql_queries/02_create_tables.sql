@@ -1,7 +1,7 @@
 
 -- Create the hospitals table
 
-USE hospital_database
+USE hospital_database;
 
 CREATE TABLE hospitals
 (
@@ -32,18 +32,17 @@ SELECT * FROM hospitals;
 
 -- Create the doctors_patients table
 
-CREATE TABLES doctors_patients
+CREATE TABLE doctors_patients
 (
-    person_id INT unsigned NOT NULL AUTO INCREMENT,
+    person_id INT UNSIGNED NOT NULL AUTO INCREMENT,
     name VARCHAR(150) NOT NULL,
     date_of_birth DATE NOT NULL,
     address VARCHAR(255) NOT NULL,
     role VARCHAR(20) NOT NULL,
-    hospital_id INTL,
+    hospital_id INT,
     doctor_id INT,
     PRIMARY KEY (person_id),
-    FOREIGN KEY (hospital_id),
-	REFERENCES hospitals(hospital_id)
+    FOREIGN KEY (hospital_id) REFERENCES hospitals(hospital_id)
 );
 
 -- Check table has been created
@@ -60,7 +59,15 @@ LOAD DATA LOCAL INFILE '/home/ubuntu/hospital_database/data_files/doctors.csv' I
 
 -- Check the data
 
-SELECT * FROM doctors_patients
+SELECT * FROM doctors_patients;
+
+-- Load data from patients.csv
+
+LOAD DATA LOCAL INFILE '/home/ubuntu/hospital_database/data_files/patients.csv' INTO TABLE doctors_patients FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' IGNORE 1 LINES (person_id, name, date_of_birth, address, role, doctor_id);
+
+-- CHeck the data
+
+SELECT * FROM doctors_patients;
 
 -- Create the prescriptions table
 
@@ -84,7 +91,7 @@ DESCRIBE prescriptions;
 
 -- Load data from prescriptions.csv
 
-LOAD DATA LOCAL INFILE '/home/ubuntu/hospital_database/data_files/prescriptions.csv' INTO TABLE prescriptions FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' IGNORE 1 LINES (prescription_id, patient_id, doctor_id, medication, prescription_date):
+LOAD DATA LOCAL INFILE '/home/ubuntu/hospital_database/data_files/prescriptions.csv' INTO TABLE prescriptions FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' IGNORE 1 LINES (prescription_id, patient_id, doctor_id, medication, prescription_date);
 
 -- Check the data
 
