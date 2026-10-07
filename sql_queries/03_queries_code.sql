@@ -16,8 +16,8 @@ FROM prescriptions
 INNER JOIN doctors_patients
 ON prescriptions.patient_id = doctors_patients.person_id
 WHERE doctors_patients.person_id = 554
-ORDER BY prescriptions.prescription_date
-AND doctors_patients.role = 'Patient';
+AND doctors_patients.role = 'Patient'
+ORDER BY prescriptions.prescription_date;
 
 -- List all prescriptions issued by a selected doctor
 
