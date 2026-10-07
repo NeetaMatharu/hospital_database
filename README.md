@@ -4,7 +4,7 @@
 HPDM206Z Assignment 1: Developing a hospital database using MySQL
 
 This project involves creating a hospital database in MySQL which stores information about hospitals, doctors, patients and prescriptions.
-It's purpose is to organise related data and allow users to retrive specific information using SQL queries.
+Its purpose is to organise related data and allow users to retrieve specific information using SQL queries.
 
 ## Database Structure
 
@@ -36,7 +36,7 @@ Doctors are connected to the hospitals table via hospital_id. Each patient can o
 | `name` | `VARCHAR(150)` |
 | `date_of_birth` |`DATE` | 
 | `address` | `VARCHAR(255)` |
-| `role` | `VARCHAR(20`| 
+| `role` | `VARCHAR(20)`| 
 | `hospital_id` | `INT` |
 | `doctor_id` | `INT` |
 
@@ -60,10 +60,10 @@ Primary Key: `prescription_id`
 
 ## Database Relationships
 
-The three tables are connected through relationship entities.
+The three tables are connected using related fields.
 
-- One hospital can have many docotors.
-- One docotor can have many patients.
+- One hospital can have many doctors.
+- One doctor can have many patients.
 - One patient can only have one doctor.
 - One patient can have many prescriptions.
 - One doctor can make many prescriptions.
@@ -78,7 +78,7 @@ Contains the planning documents to design and create the database:
 
 - [`hospital_database_erd.drawio`](planning/hospital_database_erd.drawio) – Editable entity relationship diagram.
 - [`hospital_database_erd.png`](planning/hospital_database_erd.png) – PNG version of the entity relationship diagram showing tables connections.
-- [`pseudocode.txt`](planning/pseudocode.txt) – Pseudocode describing datbase and queries process.
+- [`pseudocode.txt`](planning/pseudocode.txt) – Pseudocode describing database and queries process.
 
 ### [`data_files/`](data_files/)
 
@@ -109,7 +109,7 @@ Contains the final exported MySQL database:
 By identifying a hospital_id, users can retrieve a list of doctors who work at that hospital.
 
 ### 2.  List a patient's prescription by date
-By identfying a patient's person_id, users can retrive a list of medications for a particular patient in date order.
+By identifying a patient's person_id, users can retrive a list of medications for a particular patient in date order.
 
 ### 3. List all prescriptions issued by a selected doctor
 By identifying a doctor's person_id, users can retrieve a list of all prescriptions made by that particular doctor.
@@ -118,7 +118,7 @@ By identifying a doctor's person_id, users can retrieve a list of all prescripti
 This query will insert a new patient into the database and assign them to a doctor.
 
 ### 5. Identify the doctor with the most prescriptions
-This query will retrieve the doctor who has issued the most prescriotions within the database. Prescriptions are counted and grouped by doctor in descedning order. 
+This query will retrieve the doctor who has issued the most prescriptions within the database. Prescriptions are counted and grouped by doctor in descending order. 
 
 ### 6. List doctors at the largest hospital by bed number
 Retrieves all doctors located at the largest hospital based on using the MAX() function to identify the  highest bed number.
@@ -134,7 +134,7 @@ To build the database the SQL files need to be run in order.
 ## Testing
 
 Each table was checked to ensure they had the correct fields and once data was uploaded the tables were inspected to ensure the correct number of records were present. 
-Each query was run to test the expected results were displayed and crossed checked against orginal data.
+Each query was run to test the expected results were displayed and crossed checked against original data.
 
 For reference, the expected records for each imported CSV are:
 
