@@ -105,22 +105,22 @@ Contains the final exported MySQL database:
 
 ## Required SQL Queries
 
-### Query 1: List doctors at a selected hospital
+1. List doctors at a selected hospital
 By identifying a hospital_id, users can retrieve a list of doctors who work at that hospital.
 
-### Query 2: List a patient's prescription by date
+2.  List a patient's prescription by date
 By identfying a patient's person_id, users can retrive a list of medications for a particular patient in date order.
 
-### Query 3: List all prescriptions issued by a selected doctor
+3. List all prescriptions issued by a selected doctor
 By identifying a doctor's person_id, users can retrieve a list of all prescriptions made by that particular doctor.
 
-### Query 4: Add a new patient and assign a doctor
+4. Add a new patient and assign a doctor
 This query will insert a new patient into the database and assign them to a doctor.
 
-### Query 5: Identify the doctor with the most prescriptions
+5. Identify the doctor with the most prescriptions
 This query will retrieve the doctor who has issued the most prescriotions within the database. Prescriptions are counted and grouped by doctor in descedning order. 
 
-### Query 6: List doctors at the largest hospital by bed number
+6. List doctors at the largest hospital by bed number
 Retrieves all doctors located at the largest hospital based on using the MAX() function to identify the  highest bed number.
 
 ## How to use the files
@@ -143,7 +143,7 @@ For reference, the expected records for each imported CSV are:
 - 600 in patients
 - 500 in prescriptions
 
-# Software 
+## Software 
 
 - MySQL
 - MobaXterm
