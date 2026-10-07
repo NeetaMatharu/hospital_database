@@ -72,7 +72,7 @@ The database relationships are provided in the entity relationship diagram in th
 
 ## Repository Structure
 
-`planning`  
+### [`planning/`](planning/)  
 
 Contains the planning documents to design and create the database:
 
