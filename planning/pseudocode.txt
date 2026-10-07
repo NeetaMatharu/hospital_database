@@ -69,3 +69,119 @@ Check the hospital table has the expected number of 40 records.
 
 
 END
+
+# Creating doctors_patients table
+
+START
+
+Connect to MySQL
+
+Select hospital_database
+
+Create the doctors_patients table with the following fields:
+
+person_id	INT AUTO INCREMENT  primary key	   required
+name		VARCHAR(150)	required
+date_of_birth	DATE		required
+address		VARCHAR(255)	required
+role		VARCHAR(20)	required
+hospital_id	INT   foreign key	required
+doctor_id	IN    foreign key	required
+
+Check the doctors-patients table has been created
+
+Check the columns contents and datatypes
+
+Load the data from doctors.csv into the doctors_patients table.
+
+Check the data has loaded as expected.
+
+Load the data from patients.csv into the doctors_patients table.
+
+Check the data has loaded as expected.
+Check the doctors_patients table has the expected number of records.
+
+IF 100 doctor records and 600 patient records loaded
+	Continue to the prescriptions table
+ELSE 
+	Investigate and correct data loading error
+
+# Prescriptions table
+
+START
+
+Connect to MySQL
+
+Select hospital_database
+
+Create the prescriptions table with the following fields;
+
+prescription_id   INT 	 required, primary key
+patient_id 	  INT 	 required,
+doctor_id 	  INT 	 required,
+medication 	  VARCHAR(100) required,
+prescription_date DATE 	required
+
+Check the prescriptions table has been created
+
+Check the columns contents and datatypes
+
+Load the data from prescriptions.csv into the prescriptions table.
+
+Check the data has loaded as expected.
+IF 500 prescription records loaded
+	Run queries
+ELSE 
+	Investigate and correct data loading error
+
+# Required queries
+
+# Query 1: List doctors at a selected hospital
+BEGIN
+Identify hospital_id to be used.
+Retrieve hospital_id, person_id and name from prescriptions table and doctors_patients table. 
+Match hospitals to doctors using hospital_id
+DISPLAY list of doctors at selected hospital
+
+# Query 2: List a patient's prescriptions by date
+BEGIN
+Identify patient_id to be used
+Retrieve prescription_id, medication, prescription_date, person_id and name from prescriptions table and doctors_patients table.
+Match prescriptions to the patient using person_id.
+Order results by prescription_date
+DISPLAY the results.
+
+# Query 3: List all prescriptions issued by a selected doctor
+BEGIN
+Identify doctor_id to be used.
+Retrieve prescription_id, medication, person_id and name FROM prescriptions table and doctors_patients table.
+Match prescriptions to the doctor using prescription_id WHERE role is Doctor.
+DISPLAY list of prescriptions issued by a doctor
+
+# Query 4: Add a new patient and assign a doctor
+BEGIN
+Check that the selected doctor_id belongs to a Doctor
+Insert the new patient details
+Assign the selected doctor_id to the patient
+Automatically generate the next person_id
+Check that the patient was added successfullyR
+
+# Query 5: Identify the doctor with the most prescriptions issued
+Retrieve person_id, name and prescription_is FROM prescriptions table and doctor-patients table.
+Group prescriptions by doctor
+Count the prescriptions for each doctor
+Order the counts from highest to lowest
+Display the doctor with the highest count
+
+# Query 6: List doctors at the largest hospital by bed number
+Find the maximum hospital size
+Select the hospital with that size
+Retrieve hospital_id, name, size, person_id and name FROM hospitals table and doctors_patients table WHERE hospital size = MAX(size).
+Match the hospital to its doctors using hospital_id
+Display all doctors at that hospital
+
+# Export 
+Export the completed hospital_database to an SQL file
+
+END
+
