@@ -80,5 +80,74 @@ Contains the planning documents to design and create the database:
 - [`hospital_database_erd.png`](planning/hospital_database_erd.png) – PNG version of the entity relationship diagram showing tables connections.
 - [`pseudocode.txt`](planning/pseudocode.txt) – Pseudocode describing datbase and queries process.
 
-- 
+### [`data_files/`](data_files/)
+
+Contains the CSV files imported into MySQL tables:
+
+- [`hospitals.csv`](data_files/hospitals.csv)
+- [`doctors.csv`](data_files/doctors.csv)
+- [`patients.csv`](data_files/patients.csv)
+- [`prescriptions.csv`](data_files/prescriptions.csv)
+
+### [`sql_queries/`](sql_queries/)
+
+Contains the SQL code used to create and query the database:
+
+- [`01_create_database.sql`](sql_queries/01_create_database.sql) – Creates and selects the MySQL database.
+- [`02_create_tables.sql`](sql_queries/02_create_tables.sql) – Creates the tables and loads the CSV data.
+- [`03_queries_code.sql`](sql_queries/03_queries_code.sql) – Contains the six SQL queries.
+
+### [`database/`](database/)
+
+Contains the final exported MySQL database:
+
+- [`hospital_database.sql`](database/hospital_database.sql) – Database exported using `mysqldump`. 
+
+## Required SQL Queries
+
+### Query 1: List doctors at a selected hospital
+By identifying a hospital_id, users can retrieve a list of doctors who work at that hospital.
+
+### Query 2: List a patient's prescription by date
+By identfying a patient's person_id, users can retrive a list of medications for a particular patient in date order.
+
+### Query 3: List all prescriptions issued by a selected doctor
+By identifying a doctor's person_id, users can retrieve a list of all prescriptions made by that particular doctor.
+
+### Query 4: Add a new patient and assign a doctor
+This query will insert a new patient into the database and assign them to a doctor.
+
+### Query 5: Identify the doctor with the most prescriptions
+This query will retrieve the doctor who has issued the most prescriotions within the database. Prescriptions are counted and grouped by doctor in descedning order. 
+
+### Query 6: List doctors at the largest hospital by bed number
+Retrieves all doctors located at the largest hospital based on using the MAX() function to identify the  highest bed number.
+
+## How to use the files
+
+To build the database the SQL files need to be run in order.
+
+1. Run `01_create_database.sql`.
+2. Run `02_create_tables.sql`.
+3. Run `03_queries_code.sql` 
+
+## Testing
+
+Each table was checked to ensure they had the correct fields and once data was uploaded the tables were inspected to ensure the correct number of records were present. 
+Each query was run to test the expected results were displayed and crossed checked against orginal data.
+
+For reference, the expected records for each imported CSV are:
+
+- 40 in hospitals
+- 100 in doctors
+- 600 in patients
+- 500 in prescriptions
+
+# Software 
+
+- MySQL
+- MobaXterm
+- Git and GitHub
+- Draw.io
+
 
