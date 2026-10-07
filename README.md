@@ -72,9 +72,13 @@ The database relationships are provided in the entity relationship diagram in th
 
 ## Repository Structure
 
-### Planning
+### [`planning/`](planning/) 
 
-- (planning/hospital_database_erd.png) - Entity Realtionship Diagram showing connections between tables.
-- (planning/pseudocode.txt) - Pseudocode explaining how to create the database and SQL queries.
+Contains the planning documents to design and create the database:
 
+- [`hospital_database_erd.drawio`](planning/hospital_database_erd.drawio) – Editable entity relationship diagram.
+- [`hospital_database_erd.png`](planning/hospital_database_erd.png) – PNG version of the entity relationship diagram showing tables connections.
+- [`pseudocode.txt`](planning/pseudocode.txt) – Pseudocode describing datbase and queries process.
+
+- 
 
