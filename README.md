@@ -105,19 +105,19 @@ Contains the final exported MySQL database:
 
 ## Required SQL Queries
 
-1. List doctors at a selected hospital
+### 1. List doctors at a selected hospital
 By identifying a hospital_id, users can retrieve a list of doctors who work at that hospital.
 
-2.  List a patient's prescription by date
+### 2.  List a patient's prescription by date
 By identfying a patient's person_id, users can retrive a list of medications for a particular patient in date order.
 
-3. List all prescriptions issued by a selected doctor
+### 3. List all prescriptions issued by a selected doctor
 By identifying a doctor's person_id, users can retrieve a list of all prescriptions made by that particular doctor.
 
-4. Add a new patient and assign a doctor
+### 4. Add a new patient and assign a doctor
 This query will insert a new patient into the database and assign them to a doctor.
 
-5. Identify the doctor with the most prescriptions
+### 5. Identify the doctor with the most prescriptions
 This query will retrieve the doctor who has issued the most prescriotions within the database. Prescriptions are counted and grouped by doctor in descedning order. 
 
 6. List doctors at the largest hospital by bed number
