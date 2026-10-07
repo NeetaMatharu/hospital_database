@@ -54,8 +54,8 @@ hospital_id     INT    primary key    required
 name            VARCHAR(150)          required
 address         VARCHAR(255)          required
 size            INT (number of beds)  required
-type            VARCHAR(50)           required
-accreditation_status VARCHAR(30       required
+type            VARCHAR(30)           required
+accreditation_status VARCHAR(30)      required
 
 Check the hospitals table has been created
 
@@ -80,13 +80,13 @@ Select hospital_database
 
 Create the doctors_patients table with the following fields:
 
-person_id	INT AUTO INCREMENT  primary key	   required
+person_id	INT AUTO_INCREMENT  primary key	   required
 name		VARCHAR(150)	required
 date_of_birth	DATE		required
 address		VARCHAR(255)	required
 role		VARCHAR(20)	required
 hospital_id	INT   foreign key	required
-doctor_id	IN    foreign key	required
+doctor_id	INT   foreign key	required
 
 Check the doctors-patients table has been created
 
@@ -99,12 +99,14 @@ Check the data has loaded as expected.
 Load the data from patients.csv into the doctors_patients table.
 
 Check the data has loaded as expected.
+
 Check the doctors_patients table has the expected number of records.
 
 IF 100 doctor records and 600 patient records loaded
 	Continue to the prescriptions table
 ELSE 
 	Investigate and correct data loading error
+END IF
 
 # Prescriptions table
 
@@ -133,13 +135,14 @@ IF 500 prescription records loaded
 	Run queries
 ELSE 
 	Investigate and correct data loading error
+END IF
 
 # Required queries
 
 # Query 1: List doctors at a selected hospital
 BEGIN
 Identify hospital_id to be used.
-Retrieve hospital_id, person_id and name from prescriptions table and doctors_patients table. 
+Retrieve hospital_id, person_id and name from hospitals table and doctors_patients table. 
 Match hospitals to doctors using hospital_id
 DISPLAY list of doctors at selected hospital
 
@@ -155,7 +158,7 @@ DISPLAY the results.
 BEGIN
 Identify doctor_id to be used.
 Retrieve prescription_id, medication, person_id and name FROM prescriptions table and doctors_patients table.
-Match prescriptions to the doctor using prescription_id WHERE role is Doctor.
+Match prescriptions to the doctor using doctor_id to parson_id  WHERE role is Doctor.
 DISPLAY list of prescriptions issued by a doctor
 
 # Query 4: Add a new patient and assign a doctor
@@ -164,10 +167,10 @@ Check that the selected doctor_id belongs to a Doctor
 Insert the new patient details
 Assign the selected doctor_id to the patient
 Automatically generate the next person_id
-Check that the patient was added successfullyR
+Check that the patient was added successfully
 
 # Query 5: Identify the doctor with the most prescriptions issued
-Retrieve person_id, name and prescription_is FROM prescriptions table and doctor-patients table.
+Retrieve person_id, name and prescription_id FROM prescriptions table and doctor_patients table.
 Group prescriptions by doctor
 Count the prescriptions for each doctor
 Order the counts from highest to lowest
