@@ -120,7 +120,7 @@ This query will insert a new patient into the database and assign them to a doct
 ### 5. Identify the doctor with the most prescriptions
 This query will retrieve the doctor who has issued the most prescriotions within the database. Prescriptions are counted and grouped by doctor in descedning order. 
 
-6. List doctors at the largest hospital by bed number
+### 6. List doctors at the largest hospital by bed number
 Retrieves all doctors located at the largest hospital based on using the MAX() function to identify the  highest bed number.
 
 ## How to use the files
